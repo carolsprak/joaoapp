@@ -9,7 +9,7 @@ class DetailSearchScreen extends StatefulWidget {
   _DetailSearchScreenState createState() => _DetailSearchScreenState();
 
   Widget buildDetail(BuildContext context, Persona p, int i) {
-    return DetailSearchScreen().createState().buildDetail(context, p.image, p.name, p.description, i);
+    return DetailSearchScreen().createState().buildDetail(context, p.image, p.name, p.description, p.descriptionEn, i);
   }
 
 }
@@ -19,9 +19,10 @@ class _DetailSearchScreenState extends State<DetailSearchScreen> {
   String image;
   String name;
   String description;
+  String descriptionEn;
   int index;
 
-  Widget buildDetail(BuildContext context, String image, String name, String description, int i){
+  Widget buildDetail(BuildContext context, String image, String name, String description, String descriptionEn, int i){
 
     this.image = image;
     this.name = name;
@@ -86,7 +87,7 @@ class _DetailSearchScreenState extends State<DetailSearchScreen> {
      Navigator.push(
          context,
          MaterialPageRoute(builder: (context) =>
-             MoreDetailScreen().buildDetail(context, this.image, this.name, this.description),
+             MoreDetailScreen().buildDetail(context, this.image, this.name, this.description, this.descriptionEn),
              settings: RouteSettings(name: "/more_detail"))
 
      );

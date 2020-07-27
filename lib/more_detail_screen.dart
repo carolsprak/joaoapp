@@ -7,8 +7,8 @@ class MoreDetailScreen extends StatefulWidget {
   @override
   _MoreDetailScreenState createState() => _MoreDetailScreenState();
 
-  Widget buildDetail(BuildContext context, String image, String name, String description) {
-    return MoreDetailScreen().createState().buildDetail(context, image, name, description);
+  Widget buildDetail(BuildContext context, String image, String name, String description, descriptionEn) {
+    return MoreDetailScreen().createState().buildDetail(context, image, name, description, descriptionEn);
   }
 
 }
@@ -18,11 +18,13 @@ class _MoreDetailScreenState extends State<MoreDetailScreen> {
   String image;
   String name;
   String description;
+  String descriptionEn;
 
-  Widget buildDetail(BuildContext context, String image, String name, String description){
+  Widget buildDetail(BuildContext context, String image, String name, String description, String descriptionEn){
     this.image = image;
     this.name = name;
     this.description = description;
+    this.descriptionEn = descriptionEn;
     return build(context);
   }
 
@@ -52,8 +54,22 @@ class _MoreDetailScreenState extends State<MoreDetailScreen> {
                     ),
 
                   ]),
-              Text("$description", textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400))
+              Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Image.asset("images/brazil.png", width: 50.0,),
+                    Text("$description", textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400))
+
+
+                  ]),
+              Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Image.asset("images/england.png", width: 50.0),
+                    Text("$descriptionEn", textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400))
+
+
+                  ]),
 
             ],
           ),
