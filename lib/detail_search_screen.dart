@@ -27,6 +27,7 @@ class _DetailSearchScreenState extends State<DetailSearchScreen> {
     this.image = image;
     this.name = name;
     this.description = description;
+    this.descriptionEn = descriptionEn;
     this.index = i;
     return build(context);
   }

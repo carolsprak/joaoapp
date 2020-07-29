@@ -35,7 +35,7 @@ class _MoreDetailScreenState extends State<MoreDetailScreen> {
         title: Text(this.name)
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30.0,130.0, 30.0, 130.0),
+        padding: const EdgeInsets.fromLTRB(30.0,80.0, 30.0, 80.0),
         child: Container(
           alignment: Alignment.topCenter,
 
@@ -50,21 +50,21 @@ class _MoreDetailScreenState extends State<MoreDetailScreen> {
                       color: Colors.white,
                       onPressed: () {
                       },
-                      child: Image.asset(this.image, width: 230.0, height: 230.0),
+                      child: Image.asset(this.image, width: 180.0, height: 180.0),
                     ),
 
                   ]),
-              Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Image.asset("images/brazil.png", width: 50.0,),
+                    Image.asset("assets/images/brazil.png", width: 50.0,),
                     Text("$description", textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400))
 
 
                   ]),
-              Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Image.asset("images/england.png", width: 50.0),
+                    Image.asset("assets/images/england.png", width: 50.0),
                     Text("$descriptionEn", textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400))
 

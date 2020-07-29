@@ -42,15 +42,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   final Map<int, Persona> _characters = {
-    0: Persona('João', "João é um hipopótamo, que consegue se transformar em muitas coisas.", "images/joaoapp.png", "João is a hipper who can transform into many things."),
-    1: Persona('Lunto', "Lunto é um cachorro muito esperto, que pulou de um foguete só para aprender a voar.", "images/lapp.png", "Lunto is a smart dog who jumped from a rocket so that he could fly."),
-    2: Persona('Pinguim', "Pinguim aprende que ser bom é bom, depois de conhecer João e Lunto.", "images/papp.png", "Penguin lears it's good to be good after meeting João and Lunto."),
-    3: Persona('Menino', "Menino é muito curioso e adora participar de aventuras.", "images/mapp.png", "Boy is curious and loves to go in adventures."),
-    4: Persona('Lobinho', "Lobinho é o pai de Lunto e adora explorar novos lugares.", "images/loapp.png", "Lobinho is Lunto's father and loves to explore new places."),
-    5: Persona('Dinossaurinho', "Dinossaurinho é o rei do mundo inteiro.", "images/dapp.png", "Dinossaurinho is king of the whole world."),
-    6: Persona('Morango', "Morango ganhou vida quando entrou no mundo misterioso.", "images/moapp.png", "Strawberry came to life after coming to the mysterious world"),
-    7: Persona('Parafuso', "Parafuso é malvado e não se importa com o que os outros dizem.", "images/paapp.png", "Screw is evil and doesn't care what people say."),
-    8: Persona('Porco', "Porco mora no ninho do passarinho que ele comeu.", "images/piapp.png", "Pig lives in the bird nest he ate."),
+    0: Persona('João', "João é um hipopótamo, que consegue se transformar em muitas coisas.", "assets/images/joaoapp.png", "João is a hippo who can transform into many things."),
+    1: Persona('Lunto', "Lunto é um cachorro muito esperto, que pulou de um foguete só para aprender a voar.", "assets/images/lapp.png", "Lunto is a smart dog who jumped from a rocket, only so that he could learn to fly."),
+    2: Persona('Pinguim', "Pinguim aprende que ser bom é bom, depois de conhecer João e Lunto.", "assets/images/papp.png", "Penguin learns it's good to be good after meeting João and Lunto."),
+    3: Persona('Menino', "Menino é muito curioso e adora participar de aventuras.", "assets/images/mapp.png", "Boy is curious and loves to go in adventures."),
+    4: Persona('Lobinho', "Lobinho é o pai de Lunto e adora explorar novos lugares.", "assets/images/loapp.png", "Lobinho is Lunto's father and loves to explore new places."),
+    5: Persona('Dinossaurinho', "Dinossaurinho é o rei do mundo inteiro.", "assets/images/dapp.png", "Dinossaurinho is king of the whole world."),
+    6: Persona('Morango', "Morango ganhou vida quando entrou no mundo misterioso.", "assets/images/moapp.png", "Strawberry came to life after coming to the mysterious world"),
+    7: Persona('Parafuso', "Parafuso é malvado e não se importa com o que os outros dizem.", "assets/images/paapp.png", "Screw is evil and doesn't care what other people say."),
+    8: Persona('Porco', "Porco mora no ninho do passarinho que ele comeu.", "assets/images/piapp.png", "Pig lives in the bird's nest he ate."),
   };
 
   @override
