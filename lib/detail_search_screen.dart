@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'main.dart';
 import 'more_detail_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DetailSearchScreen extends StatefulWidget {
   @override
@@ -34,12 +35,13 @@ class _DetailSearchScreenState extends State<DetailSearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
     return Scaffold(
       appBar: AppBar(
         title: Text(this.name)
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(2.0,150.0, 2.0, 150.0),
+        padding:  EdgeInsets.fromLTRB(20.w,350.h, 20.w, 350.h),
         child: Container(
           alignment: Alignment.topCenter,
 
@@ -47,7 +49,6 @@ class _DetailSearchScreenState extends State<DetailSearchScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-
               Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     this.index == 0  ? IconButton(
@@ -64,7 +65,7 @@ class _DetailSearchScreenState extends State<DetailSearchScreen> {
                       onPressed: () {
                         _moreDetail(context);
                       },
-                      child: Image.asset(this.image, width: 150.0, height: 150.0),
+                      child: Image.asset(this.image, width: 350.w, height: 350.h),
                     ),
                     this.index == 8 ? IconButton(
                         icon: Icon(Icons.arrow_forward_ios),

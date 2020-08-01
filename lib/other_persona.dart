@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'detail_screen.dart';
 import 'main.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OtherPersona extends StatefulWidget {
   OtherPersona({Key key, this.title}) : super(key: key);
@@ -19,6 +20,8 @@ class _OtherPersonaState extends State<OtherPersona> {
 
 @override
 Widget build(BuildContext context) {
+  ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
+
   return Scaffold(
     appBar: AppBar(
       title: Text('João App'),
@@ -32,7 +35,7 @@ Widget build(BuildContext context) {
       ],
     ),
     body: Padding(
-        padding: const EdgeInsets.fromLTRB(2.0,150.0, 2.0, 150.0),
+        padding:  EdgeInsets.fromLTRB(70.w,350.h, 70.w, 350.h),
         child: Container(
           alignment: Alignment.topCenter,
 
@@ -61,7 +64,7 @@ Widget _viewCharacter(BuildContext context, Persona persona, int i) {
       child: RaisedButton(
         color: Colors.white,
         onPressed: () {_viewDetail(context, persona, i);},
-        child: Image.asset(persona.image, width: 90.0, height: 90.0),
+        child: Image.asset(persona.image, width: 200.w, height: 200.h),
       ));
 }
 

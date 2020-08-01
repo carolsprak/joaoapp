@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:joaoapp/detail_screen.dart';
 import 'package:joaoapp/search_persona.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'other_persona.dart';
 
@@ -56,6 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
+
     return Scaffold(
       appBar: AppBar(
         title: Text('João App'),
@@ -70,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(2.0,150.0, 2.0, 150.0),
+        padding: EdgeInsets.fromLTRB(70.w ,50.h, 70.w, 50.h),
         child: Container(
            alignment: Alignment.topCenter,
 
@@ -78,6 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Personagens do Livro\n\"O mundo desconhecido\"", textAlign: TextAlign.center, style: TextStyle(fontSize: 40.sp),),
+                ),
                 Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       _viewCharacter(context, this._characters[0], 0),
@@ -91,7 +99,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
                       _viewCharacter(context, this._characters[4], 4),
-                    ])
+                    ]),
+                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                 _downloadBook()
+                ],)
             ]),)),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
@@ -108,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: RaisedButton(
           color: Colors.white,
           onPressed: () {_viewDetail(context, persona, i);},
-          child: Image.asset(persona.image, width: 90.0, height: 90.0),
+          child: Image.asset(persona.image, width: 200.w, height: 200.h),
         ));
   }
 
@@ -140,6 +152,35 @@ class _MyHomePageState extends State<MyHomePage> {
 
     );
   }
+
+  _launchURL() async {
+    const url = 'https://bit.ly/3gmroo4';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  Widget _downloadBook() {
+    return  Card(
+        child: RaisedButton(
+          color: Colors.white,
+          onPressed:
+            _launchURL,
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.fromLTRB(12.w,20.h,12.w,0.h),
+                child: Text("Baixe o Livro", textAlign: TextAlign.center,),
+              ),
+              Image.asset("assets/images/capa_app.png", width: 200.w, height: 140.h),
+            ],
+          ),
+        ));
+  }
+
+
 }
 
 class Persona {

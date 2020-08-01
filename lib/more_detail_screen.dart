@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'main.dart';
 
@@ -30,12 +31,13 @@ class _MoreDetailScreenState extends State<MoreDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
     return Scaffold(
       appBar: AppBar(
         title: Text(this.name)
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30.0,80.0, 30.0, 80.0),
+        padding:  EdgeInsets.fromLTRB(30.w,100.h, 30.w, 100.h),
         child: Container(
           alignment: Alignment.topCenter,
 
@@ -43,30 +45,36 @@ class _MoreDetailScreenState extends State<MoreDetailScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Text(name, style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w800),),
+              Text(name, style: TextStyle(fontSize: 60.sp, fontWeight: FontWeight.w800),),
               Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     RaisedButton(
                       color: Colors.white,
                       onPressed: () {
                       },
-                      child: Image.asset(this.image, width: 180.0, height: 180.0),
+                      child: Image.asset(this.image, width: 320.w, height: 320.h),
                     ),
 
                   ]),
               Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Image.asset("assets/images/brazil.png", width: 50.0,),
+                    Padding(
+                      padding: EdgeInsets.all(12.w),
+                      child: Image.asset("assets/images/brazil.png", width: 60.w,),
+                    ),
                     Text("$description", textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400))
+                        style: TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w400))
 
 
                   ]),
               Column( mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Image.asset("assets/images/england.png", width: 50.0),
+                    Padding(
+                      padding: EdgeInsets.all(12.w),
+                      child: Image.asset("assets/images/england.png", width: 60.w),
+                    ),
                     Text("$descriptionEn", textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400))
+                        style: TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w400))
 
 
                   ]),

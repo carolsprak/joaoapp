@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'detail_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'detail_search_screen.dart';
 import 'main.dart';
 
@@ -20,13 +20,14 @@ class _SearchPersonaState extends State<SearchPersona> {
 
 @override
 Widget build(BuildContext context) {
+  ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
   return Scaffold(
     appBar: AppBar(
       title: Text('João App'),
 
     ),
     body: Padding(
-        padding: const EdgeInsets.fromLTRB(2.0,20.0, 2.0, 20.0),
+        padding: EdgeInsets.fromLTRB(40.w,40.h, 40.w, 40.h),
         child: Container(
           alignment: Alignment.topCenter,
 
@@ -69,7 +70,7 @@ Widget _viewCharacter(BuildContext context, Persona persona, int i) {
       child: RaisedButton(
         color: Colors.white,
         onPressed: () {_viewDetail(context, persona, i);},
-        child: Image.asset(persona.image, width: 70.0, height: 70.0),
+        child: Image.asset(persona.image, width: 180.w, height: 180.h),
       ));
 }
 
